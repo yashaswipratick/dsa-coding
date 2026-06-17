@@ -1,0 +1,91 @@
+# ────────────────────────────────────────────
+# Maven
+# ────────────────────────────────────────────
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ────────────────────────────────────────────
+# IntelliJ IDEA
+# ────────────────────────────────────────────
+# Keep: .idea/vcs.xml (VCS root mapping), .idea/.gitignore
+# Ignore everything user-specific / machine-specific
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/shelf/
+.idea/aws.xml
+.idea/artifacts/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/dataSources.local.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/navEditor.xml
+*.iws
+*.iml
+*.ipr
+
+# ────────────────────────────────────────────
+# Eclipse
+# ────────────────────────────────────────────
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# ────────────────────────────────────────────
+# NetBeans
+# ────────────────────────────────────────────
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ────────────────────────────────────────────
+# VS Code
+# ────────────────────────────────────────────
+.vscode/
+
+# ────────────────────────────────────────────
+# macOS
+# ────────────────────────────────────────────
+# Root and all subdirectories (interview-prep, topics, patterns, etc.)
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ────────────────────────────────────────────
+# Java compiled output (safety net)
+# ────────────────────────────────────────────
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+# ────────────────────────────────────────────
+# Logs & temp
+# ────────────────────────────────────────────
+*.log
+*.tmp
+*.swp
+*.swo
