@@ -65,23 +65,23 @@ for (int r = 0; r < s.length(); r++) {
 | 2269 | [Find the K-Beauty of a Number](https://leetcode.com/problems/find-the-k-beauty-of-a-number/) | [ ] |
 
 ### Medium (15)
-| # | Problem | Done |
-|---|---|---|
-| 3 | [Longest Substring No Repeat](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [ ] |
-| 209 | [Min Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) | [ ] |
-| 424 | [Longest Repeating Char Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/) | [ ] |
-| 438 | [Find All Anagrams](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | [ ] |
-| 487 | [Max Consecutive Ones II](https://leetcode.com/problems/max-consecutive-ones-ii/) | [ ] |
-| 567 | [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | [ ] |
-| 904 | [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) | [ ] |
-| 930 | [Binary Subarrays with Sum](https://leetcode.com/problems/binary-subarrays-with-sum/) | [ ] |
-| 1004 | [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) | [ ] |
-| 1052 | [Grumpy Bookstore Owner](https://leetcode.com/problems/grumpy-bookstore-owner/) | [ ] |
-| 1248 | [Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays/) | [ ] |
-| 1493 | [Longest Subarray of 1's After Deleting One](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | [ ] |
-| 1695 | [Max Erasure Value](https://leetcode.com/problems/maximum-erasure-value/) | [ ] |
-| 1838 | [Frequency of the Most Frequent](https://leetcode.com/problems/frequency-of-the-most-frequent-element/) | [ ] |
-| 2090 | [K Radius Subarray Averages](https://leetcode.com/problems/k-radius-subarray-averages/) | [ ] |
+| # | Problem | Done    |
+|---|---|---------|
+| 3 | [Longest Substring No Repeat](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [ ]     |
+| 209 | [Min Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) | [ ]     |
+| 424 | [Longest Repeating Char Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/) | [ ]     |
+| 438 | [Find All Anagrams](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | [ ]     |
+| 487 | [Max Consecutive Ones II](https://leetcode.com/problems/max-consecutive-ones-ii/) | [ ]     |
+| 567 | [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | [ ]     |
+| 904 | [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) | [ yes ] |
+| 930 | [Binary Subarrays with Sum](https://leetcode.com/problems/binary-subarrays-with-sum/) | [ ]     |
+| 1004 | [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) | [ ]     |
+| 1052 | [Grumpy Bookstore Owner](https://leetcode.com/problems/grumpy-bookstore-owner/) | [ ]     |
+| 1248 | [Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays/) | [ ]     |
+| 1493 | [Longest Subarray of 1's After Deleting One](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | [ ]     |
+| 1695 | [Max Erasure Value](https://leetcode.com/problems/maximum-erasure-value/) | [ ]     |
+| 1838 | [Frequency of the Most Frequent](https://leetcode.com/problems/frequency-of-the-most-frequent-element/) | [ ]     |
+| 2090 | [K Radius Subarray Averages](https://leetcode.com/problems/k-radius-subarray-averages/) | [ ]     |
 
 ### Hard (15)
 | # | Problem | Done |
