@@ -12,6 +12,7 @@ target/
 # Keep: .idea/vcs.xml (VCS root mapping), .idea/.gitignore
 # Ignore everything user-specific / machine-specific
 .idea/workspace.xml
+.idea/misc.xml
 .idea/tasks.xml
 .idea/usage.statistics.xml
 .idea/dictionaries/
