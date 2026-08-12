@@ -1,0 +1,51 @@
+Identification of Knapsack Problem.
+
+If there is an array given
+there is a capacity given
+there is a choice to select the item from an array or don't select the item from an array.
+Question is asking for finding maximum, minimum, longest largest, smallest.
+
+Suggested by co-pilot
+Use this as your final checklist:
+1. You are given n items, each with something like weight/cost and value/profit.
+2. There is a limit (capacity, budget, time, target sum).
+3. You need to choose a subset of items so total constraint does not exceed limit.
+4. Objective is optimise (maximize/minimize) value/count/profit.
+5. Choice pattern is:
+     . 0/1 Knapsack: take item once or skip
+     . Unbounded Knapsack: take item multiple times or skip
+
+Combination rules by problem objective:
+
+1) Feasibility / Existence ("is it possible?")
+   Combine with ||
+   Example: Subset Sum (boolean)
+
+2) Optimization ("best value?")
+   Combine with max(...) or min(...)
+   Example: 0/1 Knapsack value -> max(include, exclude)
+
+3) Counting ways ("how many subsets/ways?")
+   Combine with +
+   Example: Count subsets with given sum
+
+4) Need all to satisfy (rare in this family)
+   Could be && in some problem formulations, but not standard subset-sum/knapsack
+
+---
+Separate Note (kept as-is, added below without modifying above):
+
+Feasibility / Existence ("is it possible?")
+Combine with ||
+Example: Subset Sum (boolean)
+
+Optimization ("best value?")
+Combine with max(...) or min(...)
+Example: 0/1 Knapsack value -> max(include, exclude)
+
+Counting ways ("how many subsets/ways?")
+Combine with +
+Example: Count subsets with given sum
+
+Need all to satisfy (rare in this family)
+Could be && in some problem formulations, but not standard subset-sum/knapsack
