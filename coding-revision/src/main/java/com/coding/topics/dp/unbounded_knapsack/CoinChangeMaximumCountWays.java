@@ -1,7 +1,7 @@
 package com.coding.topics.dp.unbounded_knapsack;
 
 // PL - https://www.geeksforgeeks.org/problems/coin-change2448/1
-public class CoinChangeCountWays {
+public class CoinChangeMaximumCountWays {
 
     public static int count(int coins[], int sum) {
         //Memoization
