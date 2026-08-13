@@ -1,5 +1,6 @@
 package com.coding.topics.dp.unbounded_knapsack;
 
+// PL - https://www.geeksforgeeks.org/problems/rod-cutting0840/1
 public class RodCutting {
 
     // same as 0-1 knapsack
@@ -55,7 +56,12 @@ public class RodCutting {
         return dp[n][w];
     }
 
-    private static int cutRodHelperTopDown(int[] length, int[] price, int w) {
+    private static int cutRodHelperTopDown(int[] price) {
+        int[] length = new int[price.length];
+        for (int i = 0; i < price.length; i++) {
+            length[i] = i+1;
+        }
+        int w = length.length;
         int[][] dp = new int[length.length+1][w+1];
 
         for (int i = 0; i <= length.length; i++) {
@@ -92,20 +98,20 @@ public class RodCutting {
         for (int i = 0; i < price1.length; i++) {
             length[i] = i+1;
         }
-        System.out.println(cutRodHelperTopDown(length, price1, length.length));
+        System.out.println(cutRodHelperTopDown(price1));
 
         int[] price2 = new int[]{3, 5, 8, 9, 10, 17, 17, 20};
         int[] length2 = new int[price2.length];
         for (int i = 0; i < price2.length; i++) {
             length2[i] = i+1;
         }
-        System.out.println(cutRodHelperTopDown(length2, price2, length2.length));
+        System.out.println(cutRodHelperTopDown(price2));
 
         int[] price3 = new int[]{3};
         int[] length3 = new int[price3.length];
         for (int i = 0; i < price3.length; i++) {
             length3[i] = i+1;
         }
-        System.out.println(cutRodHelperTopDown(length3, price3, length3.length));
+        System.out.println(cutRodHelperTopDown(price3));
     }
 }
