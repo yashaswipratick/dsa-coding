@@ -20,7 +20,7 @@ public class LongestCommonSubstring {
         return res;
     }
 
-    public static int longCommSubstrMemoization(String s1, String s2) {
+    public static int longCommSubstrTopDown(String s1, String s2) {
         int n = s1.length();
         int m = s2.length();
         int[][] dp = new int[n + 1][m + 1];
@@ -41,7 +41,7 @@ public class LongestCommonSubstring {
     }
 
     public static void main(String[] args) {
-        System.out.println(longCommSubstrMemoization("ABCDGH", "ACDGHR")); // 4
-        System.out.println(longCommSubstrMemoization("jqvdtcfzugvyk", "xvnuyjqvdtcfzyy")); // 8
+        System.out.println(longCommSubstrTopDown("ABCDGH", "ACDGHR")); // 4
+        System.out.println(longCommSubstrTopDown("jqvdtcfzugvyk", "xvnuyjqvdtcfzyy")); // 8
     }
 }
