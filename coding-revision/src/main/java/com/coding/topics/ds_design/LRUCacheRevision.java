@@ -3,18 +3,19 @@ package com.coding.topics.ds_design;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LRUCache {
+public class LRUCacheRevision {
+
     int capacity;
     Map<Integer, Node> cache = new HashMap<>();
-    Node head = new Node(-1, -1); 
+    Node head = new Node(-1, -1);
     Node tail = new Node(-1, -1);
 
-    public LRUCache(int capacity) {
+    public LRUCacheRevision(int capacity) {
         this.capacity = capacity;
         this.head.next = tail;
-        this.tail = head;
+        this.tail.prev = head;
     }
-    
+
     public int get(int key) {
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
@@ -24,9 +25,8 @@ public class LRUCache {
             return -1;
         }
     }
-    
+
     public void put(int key, int value) {
-        evict();
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
             moveToFront(node);
@@ -35,47 +35,41 @@ public class LRUCache {
             Node node = new Node(key, value);
             cache.put(key, node);
             moveToFront(node);
-            capacity--;
         }
     }
-    
+
     public int remove(int key) {
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
             removeNode(node);
-            capacity++;
+            cache.remove(key);
             return node.value;
         } else {
             return -1;
         }
     }
-    
+
     public int size() {
         return cache.size();
     }
-    
+
+    public boolean containsKey(int key) {
+        if (cache.containsKey(key)) {
+            Node node = cache.get(key);
+            moveToFront(node);
+            return true;
+        }
+        return false;
+    }
+
     private void moveToFront(Node node) {
         removeNode(node);
         addToFront(node);
     }
 
-    private void evict() {
-        if (cache.size() > capacity) {
-            removeFromLast();
-        }
-    }
-
-    private void removeFromLast() {
-        Node lru = tail.prev;   // last real node
-        if (lru == head) return; // nothing to evict
-        removeNode(lru);
-        cache.remove(lru.key);
-    }
-
     private void addToFront(Node node) {
         node.next = head.next;
         node.prev = head;
-        //If there was already a node after head, update that node’s prev pointer to point back to the new node.
         if (head.next != null) {
             head.next.prev = node;
         }
@@ -86,20 +80,31 @@ public class LRUCache {
         if (node.prev != null) {
             node.prev.next = node.next;
         }
-        
         if (node.next != null) {
             node.next.prev = node.prev;
         }
     }
-    
-    public void clear() {
+
+    private void clear() {
         cache.clear();
         head.next = tail;
         tail.prev = head;
     }
 
+    static class Node {
+        int key;
+        int value;
+        Node prev;
+        Node next;
+
+        public Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
     public static void main(String[] args) {
-        LRUCache cache = new LRUCache(2);
+        LRUCacheRevision cache = new LRUCacheRevision(2);
 
         cache.put(1, 1);
         cache.put(2, 2);
@@ -128,17 +133,5 @@ public class LRUCache {
     private static void expect(String label, int expected, int actual) {
         String status = expected == actual ? "PASS" : "FAIL";
         System.out.println(status + " | " + label + " | expected=" + expected + ", actual=" + actual);
-    }
-    
-    static class Node {
-        int key;
-        int value;
-        Node next;
-        Node prev;
-
-        public Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-        }
     }
 }
