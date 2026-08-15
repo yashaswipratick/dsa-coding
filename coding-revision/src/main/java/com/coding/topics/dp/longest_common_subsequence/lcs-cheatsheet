@@ -1,0 +1,23 @@
+If two string is given and ask is to find something optimal then it is a problem of LCS(dp)
+
+LongestCommonSubstring(base question)
+check input format         Question                 Output
+string a,                  find lcs                  int
+string b,
+
+LongestCommonSubstring
+check input format         Question                 Output
+string a,                  find lcs                  int
+string b,                  substring
+
+MinimumInsertAndDelete
+
+check input format         Question                 Output
+string a,                  Minimum                  int
+string b,                  Operation
+
+LongestPalindromicSubsequence
+
+check input format         Question                 Output
+string a,                  longest                  int
+string a reversed,         Operation

@@ -7,7 +7,7 @@ public class LongestCommonSubstring {
     // helper(n, m) = length of common substring ENDING at s1[n-1] and s2[m-1].
     // On mismatch → 0 (streak breaks), exactly like dp[i][j] = 0 in tabulation.
     // We call helper for every (i, j) pair and track global max — same as nested loops in tabulation.
-    public static int longCommSubstr(String s1, String s2) {
+    private static int longCommSubstr(String s1, String s2) {
         int maxLen = 0;
         for (int i = 1; i <= s1.length(); i++) {
             for (int j = 1; j <= s2.length(); j++) {
@@ -30,7 +30,7 @@ public class LongestCommonSubstring {
         }
     }
 
-    public static int longCommSubstrTopDown(String s1, String s2) {
+    private static int longCommSubstrTopDown(String s1, String s2) {
         int n = s1.length();
         int m = s2.length();
         int[][] dp = new int[n + 1][m + 1];
