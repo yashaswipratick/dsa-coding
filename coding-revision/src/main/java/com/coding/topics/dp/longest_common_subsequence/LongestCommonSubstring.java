@@ -1,5 +1,6 @@
 package com.coding.topics.dp.longest_common_subsequence;
 
+// PL - https://www.geeksforgeeks.org/problems/longest-common-substring1452/1
 public class LongestCommonSubstring {
 
     // Recursive version — same mental model as tabulation.
