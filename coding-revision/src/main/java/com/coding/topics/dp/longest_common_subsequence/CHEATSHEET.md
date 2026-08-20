@@ -115,6 +115,8 @@ maxLen = Math.max(maxLen, dp[i][j]);
 **Why this base case:**
 - `n == 0 || m == 0` → one pointer exhausted → no repeating subsequence possible → 0.
 - Same as standard LCS — we're running LCS on the string with itself, so the base is identical.
+- **copy s1 into new String s2 = s1**
+- post this step the code is same as LCS only change is when string matches we need to check if the indices are not same to avoid duplicates
 
 **Recursive Choice:**
 ```java
