@@ -1,32 +1,33 @@
-package com.coding.topics.ds_design;
+package com.coding.topics.ds_design.revision;
+
+import com.coding.topics.ds_design.LRUCache;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class LRUCacheRevision {
-
+public class LRURevision {
     int capacity;
     Map<Integer, Node> cache = new HashMap<>();
     Node head = new Node(-1, -1);
     Node tail = new Node(-1, -1);
 
-    public LRUCacheRevision(int capacity) {
+    public LRURevision(int capacity) {
         this.capacity = capacity;
         this.head.next = tail;
         this.tail.prev = head;
     }
 
     public int get(int key) {
-        if (cache.containsKey(key)) {
+        if (cache.containsKey(key)){
             Node node = cache.get(key);
             moveToFront(node);
             return node.value;
-        } else {
-            return -1;
         }
+        return -1;
     }
 
     public void put(int key, int value) {
+        evict();
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
             moveToFront(node);
@@ -35,45 +36,34 @@ public class LRUCacheRevision {
             Node node = new Node(key, value);
             cache.put(key, node);
             moveToFront(node);
+            capacity--;
         }
     }
 
     public int remove(int key) {
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
-            removeNode(node);
             cache.remove(key);
+            removeNode(node);
+            capacity++;
             return node.value;
-        } else {
-            return -1;
         }
+        return -1;
     }
 
     public int size() {
         return cache.size();
     }
 
-    public boolean containsKey(int key) {
-        if (cache.containsKey(key)) {
-            Node node = cache.get(key);
-            moveToFront(node);
-            return true;
-        }
-        return false;
+    public void clear() {
+        cache.clear();
+        this.head.next = this.tail;
+        this.tail.prev = this.head;
     }
 
     private void moveToFront(Node node) {
         removeNode(node);
         addToFront(node);
-    }
-
-    private void addToFront(Node node) {
-        node.next = head.next;
-        node.prev = head;
-        if (head.next != null) {
-            head.next.prev = node;
-        }
-        head.next = node;
     }
 
     private void removeNode(Node node) {
@@ -85,10 +75,29 @@ public class LRUCacheRevision {
         }
     }
 
-    private void clear() {
-        cache.clear();
-        head.next = tail;
-        tail.prev = head;
+    private void removeFromLast() {
+        Node lru = tail.prev;
+        if (lru == head) {
+            return;
+        }
+        removeNode(lru);
+        cache.remove(lru.key);
+    }
+
+    private void evict() {
+        while (cache.size() > capacity) {
+            removeFromLast();
+            capacity++;
+        }
+    }
+
+    private void addToFront(Node node) {
+        node.next = head.next;
+        node.prev = head;
+        if (head.next != null) {
+            head.next.prev = node;
+        }
+        head.next = node;
     }
 
     static class Node {
@@ -96,7 +105,6 @@ public class LRUCacheRevision {
         int value;
         Node prev;
         Node next;
-
         public Node(int key, int value) {
             this.key = key;
             this.value = value;
@@ -104,7 +112,7 @@ public class LRUCacheRevision {
     }
 
     public static void main(String[] args) {
-        LRUCacheRevision cache = new LRUCacheRevision(2);
+        LRURevision cache = new LRURevision(2);
 
         cache.put(1, 1);
         cache.put(2, 2);

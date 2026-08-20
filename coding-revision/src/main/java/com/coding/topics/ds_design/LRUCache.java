@@ -12,7 +12,7 @@ public class LRUCache {
     public LRUCache(int capacity) {
         this.capacity = capacity;
         this.head.next = tail;
-        this.tail = head;
+        this.tail.prev = head;
     }
     
     public int get(int key) {
@@ -42,6 +42,7 @@ public class LRUCache {
     public int remove(int key) {
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
+            cache.remove(key);
             removeNode(node);
             capacity++;
             return node.value;
