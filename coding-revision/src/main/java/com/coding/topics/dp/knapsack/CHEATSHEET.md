@@ -157,6 +157,53 @@ else
 
 ---
 
+## 5. Count Subsets with Given Difference / Target Sum
+**File:** `CountSubsetWithGivenDiff.java` / `TargetSum.java`
+**Link:** https://leetcode.com/problems/target-sum/description/
+
+**Problem:** Count ways to assign `+` / `-` to each element such that expression equals `target`.
+
+**Key Insight:** Reduce to Count of Subset Sum.
+- Let S1 = subset with `+`, S2 = subset with `-`
+- `S1 - S2 = target` and `S1 + S2 = totalSum`
+- Solving: `S1 = (target + totalSum) / 2`
+- So: count subsets with sum = `(target + totalSum) / 2`
+
+**Why this base case:** Same as Count of Subset Sum — `n == 0 → return target == 0 ? 1 : 0`
+
+**Guards (add BEFORE computing subsetSum):**
+```java
+if ((target + sum) % 2 != 0) return 0;   // fractional split → impossible
+if (Math.abs(target) > sum) return 0;     // |diff| can't exceed total sum
+```
+
+**Tabulation:**
+```java
+// Base: dp[0][0]=1, dp[0][j>0]=0, dp[i][0]=1
+// ⚠️ Inner loop starts from j=0 (not j=1) to correctly handle zero elements
+for (int i = 1; i <= n; i++) {
+    for (int j = 0; j <= subsetSum; j++) {   // j starts at 0
+        if (arr[i-1] <= j)
+            dp[i][j] = dp[i-1][j-arr[i-1]] + dp[i-1][j];
+        else
+            dp[i][j] = dp[i-1][j];
+    }
+}
+// Answer: dp[n][subsetSum]  ← NOT dp[n][totalSum]
+```
+
+**⚠️ Common Mistakes:**
+| Mistake | Fix |
+|---|---|
+| `return dp[n][totalSum]` | Should be `return dp[n][subsetSum]` |
+| Inner loop `j=1` | Must start from `j=0` for zero elements |
+| Guard `target > sum` | Must be `Math.abs(target) > sum` for negative targets |
+| Init `i==0 \|\| j==0 → 1` | Must be `i==0 && j==0 → 1`; `i==0, j>0 → 0` |
+
+**Combine rule:** `+` — counting.
+
+---
+
 ## 🔑 Combination Rules
 
 | Goal | Operator | Example |
