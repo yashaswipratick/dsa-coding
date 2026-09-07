@@ -41,11 +41,18 @@ public class GroupAnagrams {
     public static List<List<String>> groupAnagrams(String[] nums) {
         Map<String, List<String>> map = new HashMap<>();
 
+        int[] count = new int[26];
         for (String i : nums) {
             char[] c = i.toCharArray();
-            Arrays.sort(c);
-            String s = new String(c);
-
+            Arrays.fill(count, 0);
+            for (int j = 0; j < c.length; j++) {
+                count[c[j] - 'a']++;
+            }
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < count.length; j++) {
+                sb.append('#').append(count[j]);
+            }
+            String s = sb.toString();
             if (!map.containsKey(s)) {
                 List<String> list = new ArrayList<>();
                 list.add(i);
