@@ -1,0 +1,12 @@
+Encode and decode string
+
+To split a string on any single-digit number followed by a hash symbol,
+you can use a regular expression (Regex) with a capturing group or lookarounds, depending
+on whether you want to keep or discard the delimiter.
+
+String text = "apple1#banana5#cherry";
+String[] result = text.split("\\d#");
+
+// result will be ["apple", "banana", "cherry"]
+
+
