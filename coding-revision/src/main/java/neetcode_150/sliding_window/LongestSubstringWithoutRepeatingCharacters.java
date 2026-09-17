@@ -95,11 +95,11 @@ public class LongestSubstringWithoutRepeatingCharacters {
         String case1 = "abcabcbb";
         System.out.println("Case 1: sample input");
         System.out.println("Input: " + case1);
-        LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring();
+        System.out.println(LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring(case1));
         String case2 = "bbbbb";
         System.out.println("Case 2: sample input");
         System.out.println("Input: " + case2);
-        LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring();
+        System.out.println(LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring(case2));
         System.out.println("All LongestSubstringWithoutRepeatingCharacters scenarios reviewed.");
     }
 }
